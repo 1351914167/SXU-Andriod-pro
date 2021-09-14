@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="toolbar">导航</string>
+    <string name="search_title">search</string>
+    <string name="setting_title">setting</string>
+    <string name="hint_username">请输入用户名</string>
+    <string name="hint_password">请输入密码</string>
+    <string name="button_next">确定</string>
+    <string name="button_cancel">取消</string>
+    <string name="password_error">密码须长于8个字符</string>
+</resources>
