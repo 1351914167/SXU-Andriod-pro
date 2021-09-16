@@ -10,5 +10,5 @@
         android:id="@+id/filter"
         android:icon="@drawable/setting"
         android:title="@string/setting_title"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 </menu>

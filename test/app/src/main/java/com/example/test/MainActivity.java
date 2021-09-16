@@ -22,6 +22,7 @@ import com.example.test.feature.EquipFragment;
 import com.example.test.feature.LinkFragment;
 import com.example.test.feature.LocateFragment;
 import com.example.test.feature.MineFragment;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonLocate, buttonCommunity, buttonEquip, buttonMine;
     private Fragment locateFragment, communityFragment, equipFragment, mineFragment, nowFragment;
     private Fragment editFragment, linkFragment;
+    private NavigationBarView navigationBarView;
     private boolean isPermissionRequested;
 
     @Override
@@ -43,12 +45,14 @@ public class MainActivity extends AppCompatActivity {
         showFragment(locateFragment);
     }
 
+
     //初始化控件
     private void initView() {
         buttonLocate = (Button) findViewById(R.id.locate);
         buttonCommunity = (Button) findViewById(R.id.community);
         buttonEquip = (Button) findViewById(R.id.equip);
         buttonMine = (Button) findViewById(R.id.mine);
+        navigationBarView = findViewById(R.id.bottom_nav);
         // 底部导航栏的点击相应事件
         buttonLocate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {

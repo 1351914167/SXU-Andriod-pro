@@ -50,7 +50,9 @@ public class LocateFragment extends Fragment {
         toolbar.setNavigationOnClickListener(new NavigationIconClickListener(
                 getContext(),
                 view.findViewById(R.id.mapview),
-                new AccelerateDecelerateInterpolator()));
+                new AccelerateDecelerateInterpolator(),
+                getContext().getResources().getDrawable(R.drawable.shr_menu),
+                getContext().getResources().getDrawable(R.drawable.close)));
     }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {

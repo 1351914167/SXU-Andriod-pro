@@ -37,7 +37,7 @@ public class NavigationIconClickListener implements View.OnClickListener {
         this(context, sheet, interpolator, null, null);
     }
 
-    NavigationIconClickListener(
+    public NavigationIconClickListener(
             Context context, View sheet, @Nullable Interpolator interpolator,
             @Nullable Drawable openIcon, @Nullable Drawable closeIcon) {
         this.context = context;

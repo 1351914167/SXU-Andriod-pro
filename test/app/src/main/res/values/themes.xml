@@ -50,5 +50,10 @@
     <style name="Widget.BackDrop" parent="">
         <item name="android:background">?attr/colorAccent</item>
     </style>
+
+    
+    <style name="FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/colorAccent</item>
+    </style>
     
 </resources>
