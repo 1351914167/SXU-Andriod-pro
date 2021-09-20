@@ -1,3 +1,2 @@
 # SXU-Andriod-pro 
-private project
-use for practice
+private project used for practice
