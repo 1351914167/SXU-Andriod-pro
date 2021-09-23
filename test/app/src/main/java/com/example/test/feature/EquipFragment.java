@@ -31,12 +31,6 @@ public class EquipFragment extends Fragment {
         link = view.findViewById(R.id.link);
         setting = view.findViewById(R.id.setting);
 
-        link.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                Toast.makeText(mActivity, "连接设备", Toast.LENGTH_SHORT).show();
-                mActivity.showFragment("LinkFragment");
-            }
-        });
         setting.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Toast.makeText(mActivity, "设备管理", Toast.LENGTH_SHORT).show();

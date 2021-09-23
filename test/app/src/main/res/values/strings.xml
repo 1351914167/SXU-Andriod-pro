@@ -10,4 +10,7 @@
     <string name="button_next">确定</string>
     <string name="button_cancel">取消</string>
     <string name="password_error">密码须长于8个字符</string>
+    <string name="map_label">买瓜</string>
+    <string name="person_label">华强</string>
+    <string name="unknown_label">撒日朗</string>
 </resources>

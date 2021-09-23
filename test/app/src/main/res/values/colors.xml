@@ -10,4 +10,5 @@
     <color name="textColorPrimary">#442C2E</color>
     <color name="productGridBackgroundColor">#FFFFFF</color>
     <color name="boxStrokeColor">#40C4FF</color>
+    <color name="bottom_selected">@color/black</color>
 </resources>

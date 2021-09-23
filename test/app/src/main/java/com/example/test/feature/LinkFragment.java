@@ -70,12 +70,6 @@ public class LinkFragment extends Fragment implements AdapterView.OnItemClickLis
         linkListView.setOnItemClickListener(this);
 
         back = view.findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                Toast.makeText(mActivity, "link", Toast.LENGTH_SHORT).show();
-                mActivity.showFragment("EquipFragment");
-            }
-        });
     }
 
     /* 应该从服务器获得社区数据，现在是通过数据库模拟 ！！！ */

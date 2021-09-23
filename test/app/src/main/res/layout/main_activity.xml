@@ -3,62 +3,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-
-    <LinearLayout
-        android:id="@+id/trunk"
-        android:layout_width="match_parent"
+    <fragment
+        android:id="@+id/fragment_container_view"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_height="0dp"
+        android:layout_width="0dp"
         android:layout_weight="1"
-        android:orientation="vertical">
-    </LinearLayout>
-
-    <LinearLayout
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:navGraph="@navigation/nav_main"
+        />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        style="@style/Widget.Design.NavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/background"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/locate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/background"
-            android:text="位 置"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        <Button
-            android:id="@+id/community"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/background"
-            android:text="社 区"
-            android:textColor="@color/textColorPrimary"
-            android:textSize="18dp" />
-
-        <Button
-            android:id="@+id/equip"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/background"
-            android:text="设 备"
-            android:textColor="@color/textColorPrimary"
-            android:textSize="18dp" />
-
-        <Button
-            android:id="@+id/mine"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/background"
-            android:text="我 的"
-            android:textColor="@color/textColorPrimary"
-            android:textSize="18dp" />
-
-    </LinearLayout>
+        android:layout_gravity="bottom"
+        android:background="@color/colorAccent"
+        app:itemIconTint="@color/bottom_selected"
+        app:itemTextColor="@color/bottom_selected"
+        app:menu="@menu/bottom_nav_menu" />
 </LinearLayout>

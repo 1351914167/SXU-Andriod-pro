@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/nav_main">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/map_page">
+    <fragment
+        android:id="@+id/map_page"
+        android:name="com.example.test.feature.LocateFragment"
+        android:label="@string/map_label"/>
+    <fragment
+        android:id="@+id/person_page"
+        android:name="com.example.test.feature.MineFragment"
+        android:label="@string/person_label"/>
+    <fragment
+        android:id="@+id/unknown_page"
+        android:name="com.example.test.feature.LinkFragment"
+        android:label="@string/unknown_label"/>
 </navigation>

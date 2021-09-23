@@ -2,13 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/page1"
+        android:id="@+id/unknown_page"
         android:enabled="true"
         android:icon="@drawable/back"
-        android:title="test" />
+        android:title="@string/unknown_label" />
     <item
-        android:id="@+id/page2"
+        android:id="@+id/map_page"
+        android:enabled="true"
+        android:icon="@drawable/back"
+        android:title="@string/map_label" />
+    <item
+        android:id="@+id/person_page"
         android:enabled="true"
         android:icon="@drawable/setting"
-        android:title="TODO" />
+        android:title="@string/person_label" />
 </menu>

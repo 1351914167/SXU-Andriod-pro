@@ -40,11 +40,6 @@ public class EditFragment extends Fragment {
         publish = view.findViewById(R.id.publish);
         contend = view.findViewById(R.id.contend);
 
-        back.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                mActivity.showFragment("CommunityFragment");
-            }
-        });
         picture.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 addPicture();
@@ -79,7 +74,6 @@ public class EditFragment extends Fragment {
 
         // 发布完成，退出编辑界面
         Toast.makeText(mActivity, "发布成功："+text+time, Toast.LENGTH_SHORT).show();
-        mActivity.showFragment("CommunityFragment");
         contend.setText("");
     }
 }

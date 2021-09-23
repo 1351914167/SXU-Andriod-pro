@@ -1,159 +1,74 @@
 package com.example.test;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.test.Utils.NavigationIconClickListener;
 import com.example.test.feature.CommunityFragment;
 import com.example.test.feature.EditFragment;
 import com.example.test.feature.EquipFragment;
 import com.example.test.feature.LinkFragment;
 import com.example.test.feature.LocateFragment;
 import com.example.test.feature.MineFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
-    private Button buttonLocate, buttonCommunity, buttonEquip, buttonMine;
-    private Fragment locateFragment, communityFragment, equipFragment, mineFragment, nowFragment;
-    private Fragment editFragment, linkFragment;
-    private NavigationBarView navigationBarView;
     private boolean isPermissionRequested;
+    BottomNavigationView bottomNavigationView;
+    NavController navController;
+    Context context;
+    LocateFragment locateFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main_activity);
+        context = this;
         initView();
-        requestPermission();
-        loadFragment();
-        showFragment(locateFragment);
+    }
+
+    private void initView(){
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+        navController = Navigation.findNavController(this, R.id.fragment_container_view);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
+        //FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        //locateFragment = new LocateFragment();
+        //transaction.show(locateFragment).commit();
+
+
     }
 
 
-    //初始化控件
-    private void initView() {
-        buttonLocate = (Button) findViewById(R.id.locate);
-        buttonCommunity = (Button) findViewById(R.id.community);
-        buttonEquip = (Button) findViewById(R.id.equip);
-        buttonMine = (Button) findViewById(R.id.mine);
-        navigationBarView = findViewById(R.id.bottom_nav);
-        // 底部导航栏的点击相应事件
-        buttonLocate.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                changeButton(buttonLocate);
-                showFragment(locateFragment);
-            }
-        });
-        buttonCommunity.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                changeButton(buttonCommunity);
-                showFragment(communityFragment);
-            }
-        });
-        buttonEquip.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                changeButton(buttonEquip);
-                showFragment(equipFragment);
-            }
-        });
-        buttonMine.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                changeButton(buttonMine);
-                showFragment(mineFragment);
-            }
-        });
-    }
-
-    //加载碎片布局
-    private void loadFragment(){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-        locateFragment = new LocateFragment();
-        communityFragment = new CommunityFragment();
-        equipFragment = new EquipFragment();
-        mineFragment =  new MineFragment();
-        editFragment = new EditFragment();
-        linkFragment = new LinkFragment();
-
-        transaction.add(R.id.trunk, locateFragment);
-        transaction.add(R.id.trunk, communityFragment);
-        transaction.add(R.id.trunk, equipFragment);
-        transaction.add(R.id.trunk, mineFragment);
-        transaction.add(R.id.trunk, editFragment);
-        transaction.add(R.id.trunk, linkFragment);
-
-        transaction.hide(locateFragment);
-        transaction.hide(communityFragment);
-        transaction.hide(equipFragment);
-        transaction.hide(mineFragment);
-        transaction.hide(editFragment);
-        transaction.hide(linkFragment);
-        transaction.hide(locateFragment);
-
-        nowFragment = locateFragment;
-        transaction.commit();
-    }
-
-    // 切换界面
-    private void showFragment(Fragment to) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.hide(nowFragment).show(to).commit();
-        nowFragment = to;
-    }
-
-    public void showFragment(String to) {
-        switch(to){
-            case "CommunityFragment":
-                showFragment(communityFragment);
-                break;
-            case "EquipFragment":
-                showFragment(equipFragment);
-                break;
-            case "MineFragment":
-                showFragment(mineFragment);
-                break;
-            case "EditFragment":
-                showFragment(editFragment);
-                break;
-            case "LinkFragment":
-                showFragment(linkFragment);
-                break;
-        }
-    }
-
-    // 完成导航栏变化
-    private void changeButton(Button nowButton){
-        buttonLocate.setTextSize(18);
-        buttonLocate.setTextColor(Color.parseColor("#545454"));
-        buttonCommunity.setTextSize(18);
-        buttonCommunity.setTextColor(Color.parseColor("#545454"));
-        buttonEquip.setTextSize(18);
-        buttonEquip.setTextColor(Color.parseColor("#545454"));
-        buttonMine.setTextSize(18);
-        buttonMine.setTextColor(Color.parseColor("#545454"));
-
-        nowButton.setTextSize(20);
-        nowButton.setTextColor(Color.parseColor("#000000"));
-    }
-
-    // 连续点击两次返回键退出程序
+    /*// 连续点击两次返回键退出程序
     private long exitTime = 0;
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -174,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
+    }*/
 
     /**
      * Android6.0之后需要动态申请权限

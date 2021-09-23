@@ -12,10 +12,14 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavAction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.test.MainActivity;
 import com.example.test.Utils.NavigationIconClickListener;
 import com.example.test.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 public class LocateFragment extends Fragment {
@@ -35,7 +39,7 @@ public class LocateFragment extends Fragment {
         setUpToolbar(view);
         // Set cut corner background for API 23+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            view.findViewById(R.id.mapview).setBackgroundResource(R.drawable.need_item_style);
+            view.findViewById(R.id.map_view).setBackgroundResource(R.drawable.need_item_style);
         }
         return view;
     }
@@ -49,7 +53,7 @@ public class LocateFragment extends Fragment {
 
         toolbar.setNavigationOnClickListener(new NavigationIconClickListener(
                 getContext(),
-                view.findViewById(R.id.mapview),
+                view.findViewById(R.id.map_view),
                 new AccelerateDecelerateInterpolator(),
                 getContext().getResources().getDrawable(R.drawable.shr_menu),
                 getContext().getResources().getDrawable(R.drawable.close)));

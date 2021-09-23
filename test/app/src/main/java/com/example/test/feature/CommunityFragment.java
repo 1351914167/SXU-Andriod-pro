@@ -64,13 +64,6 @@ public class CommunityFragment extends Fragment implements AdapterView.OnItemCli
     }
 
     private void initView(){
-        edit = (ImageView) view.findViewById(R.id.edit);
-        edit.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                mActivity.showFragment("EditFragment");
-            }
-        });
-
         needListView = (ListView) view.findViewById(R.id.need_list);
         needAdapter = new NeedAdapter(needList, mActivity);
         needAdapter.setOnInnerItemOnClickListener(this);
