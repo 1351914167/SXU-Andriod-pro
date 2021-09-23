@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -37,7 +39,7 @@ public class LocateFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_locate, container, false);
         mActivity = (MainActivity)getActivity();
         setUpToolbar(view);
-        // Set cut corner background for API 23+
+        //设置背景
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             view.findViewById(R.id.map_view).setBackgroundResource(R.drawable.need_item_style);
         }

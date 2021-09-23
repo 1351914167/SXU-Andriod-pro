@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.Manifest;
@@ -53,18 +54,16 @@ public class MainActivity extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main_activity);
         context = this;
+        requestPermission();
         initView();
+
     }
 
     private void initView(){
         bottomNavigationView = findViewById(R.id.bottom_nav);
         navController = Navigation.findNavController(this, R.id.fragment_container_view);
+        //建立绑定关系
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
-        //FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        //locateFragment = new LocateFragment();
-        //transaction.show(locateFragment).commit();
-
-
     }
 
 
