@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/map_page">
+    <fragment
+        android:id="@+id/map_page"
+        android:name="com.zsh.sight.feature.LocateFragment"
+        android:label="@string/map_label"
+        tools:layout="@layout/fragment_locate">
+        <action
+            android:id="@+id/action_homeFragment_to_oneFragment"
+            app:destination="@id/person_page"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_homeFragment_to_twoFragment"
+            app:destination="@id/unknown_page"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/person_page"
+        android:name="com.zsh.sight.feature.MineFragment"
+        android:label="@string/person_label"
+        tools:layout="@layout/fragment_mine">
+        <action
+            android:id="@+id/action_homeFragment_to_oneFragment"
+            app:destination="@id/map_page"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"
+            app:popUpTo="@id/map_page"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/unknown_page"
+        android:name="com.zsh.sight.feature.CommunityFragment"
+        android:label="@string/unknown_label"
+        tools:layout="@layout/fragment_community">
+        <action
+            android:id="@+id/action_homeFragment_to_oneFragment"
+            app:destination="@id/map_page"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"
+            app:popUpTo="@id/map_page"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/map_page"
+        android:icon="@drawable/collect"
+        android:title="@string/map_label" />
+    <item
+        android:id="@+id/person_page"
+        android:icon="@drawable/setting"
+        android:title="@string/person_label" />
+    <item
+        android:id="@+id/unknown_page"
+        android:icon="@drawable/back"
+        android:title="@string/unknown_label" />
+</menu>
