@@ -11,10 +11,10 @@
         android:color="#4f00ced1" />
     <!-- 设置四个圆角的半径 -->
     <corners
-        android:bottomLeftRadius="0px"
-        android:bottomRightRadius="0px"
-        android:topLeftRadius="0px"
-        android:topRightRadius="0px" />
+        android:bottomLeftRadius="8dp"
+        android:bottomRightRadius="8dp"
+        android:topLeftRadius="8dp"
+        android:topRightRadius="8dp" />
     <!-- 设置一下边距,让空间大一点 -->
     <padding
         android:bottom="10dp"

@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".login.NewCodeActivity"
+            android:exported="true" />
+        <activity
             android:name=".login.RetrieveActivity"
             android:exported="true" />
         <activity
@@ -40,9 +43,10 @@
         <activity
             android:name=".login.LoginActivity"
             android:exported="true" />
+
         <meta-data
             android:name="TencentMapSDK"
-            android:value="IOVBZ-ACCR3-DHL3R-Y3JPS-TT67O-FVF7L"/>
+            android:value="IOVBZ-ACCR3-DHL3R-Y3JPS-TT67O-FVF7L" />
     </application>
 
 </manifest>

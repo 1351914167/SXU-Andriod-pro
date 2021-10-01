@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login.RegisterActivity">
+    tools:context=".login.RetrieveActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,14 +12,6 @@
         android:orientation="vertical"
         android:paddingLeft="60px"
         android:paddingRight="60px">
-
-        <TextView
-            android:id="@+id/back"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="返回"
-            android:textSize="20dp" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -33,48 +25,54 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20px"
-            android:text="找回密码"
+            android:text="设置新密码"
             android:textColor="#000000"
             android:textSize="28dp" />
-
-        <EditText
-            android:id="@+id/account"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/edit_style"
-            android:digits="0123456789"
-            android:hint="账号/手机号"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            >
+            android:layout_marginTop="30dp"
+            android:paddingLeft="10px">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新密码    "
+                android:textColor="#000000"
+                android:textSize="21dp" />
+
+            <EditText
+                android:id="@+id/account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="  请输入新密码"
+                android:inputType="text"
+                android:textSize="22dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10px">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="再次输入"
+                android:textColor="#000000"
+                android:textSize="21dp" />
 
             <EditText
                 android:id="@+id/check_code"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.7"
-                android:background="@drawable/edit_style"
                 android:digits="0123456789"
-                android:layout_marginRight="20dp"
-                android:hint="验证码"/>
-
-            <Button
-                android:id="@+id/send"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
-                android:text="发送"
-                android:textSize="18dp"
-                android:background="@drawable/button_style" />
+                android:hint="  再次输入密码"
+                android:textSize="22dp" />
 
         </LinearLayout>
 
@@ -83,19 +81,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:textColor="#ff0000"
-            android:textSize="15dp" />
+            android:textSize="18dp" />
 
         <Button
             android:id="@+id/next_step"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="下一步"
-            android:background="@drawable/button_style"
-            android:textSize="20dp" />
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="完  成"
+            android:textSize="23dp" />
 
     </LinearLayout>
 

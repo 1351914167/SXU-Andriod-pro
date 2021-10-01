@@ -40,7 +40,7 @@ public class InitActivity extends AppCompatActivity {
                 finish();
                 return false;
             }
-        }).sendEmptyMessageDelayed(0,1000);
+        }).sendEmptyMessageDelayed(0,500);
     }
 
     // 判断应用是否初始化过

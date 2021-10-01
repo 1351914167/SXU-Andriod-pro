@@ -25,10 +25,9 @@ public class TrunkActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if(intent != null){
             int type = intent.getIntExtra("type", 0);
-            if(type == 0)   user_type = true;
-            else    user_type = false;
+            user_type = type == 0;
         }
-        setContentView(user_type?R.layout.activity_trunk:R.layout.activity_trunk2);
+        setContentView(user_type ? R.layout.activity_trunk: R.layout.activity_trunk2);
         context = this;
         initView();
     }

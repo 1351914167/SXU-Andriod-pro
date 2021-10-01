@@ -3,16 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="15dp"
+    android:layout_margin="0dp"
     android:orientation="vertical"
     android:id="@+id/dialog">
     <com.google.android.material.card.MaterialCardView
         android:name="@+id/card"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:checkable="true">
+        android:checkable="true"
+        android:elevation="20dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
