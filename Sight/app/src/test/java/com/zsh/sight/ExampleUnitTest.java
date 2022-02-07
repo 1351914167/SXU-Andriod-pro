@@ -14,4 +14,13 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    // 判断账户是否存在
+//    public static boolean exist_account(String account){
+
+    @Test
+    public void test(){
+        LoginServer.exist_account("111");
+    }
+
 }

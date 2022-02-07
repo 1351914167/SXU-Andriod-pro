@@ -1,20 +1,23 @@
 package com.zsh.sight.login;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.shapes.Shape;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.zsh.sight.R;
-import com.zsh.sight.feature.TrunkActivity;
+import com.zsh.sight.feature.StatusBarUtil;
+import com.zsh.sight.server.LoginServer;
 
 public class RetrieveActivity extends AppCompatActivity {
 
@@ -42,9 +45,6 @@ public class RetrieveActivity extends AppCompatActivity {
     void initView() {
         bt_send = (Button) findViewById(R.id.send);
         bt_next = (Button) findViewById(R.id.next_step);
-        et_phone = (EditText) findViewById(R.id.account);
-        et_check = (EditText) findViewById(R.id.check_code);
-        warn = (TextView) findViewById(R.id.warn);
 
         // 发送验证码
         bt_send.setOnClickListener(new View.OnClickListener() {
@@ -52,8 +52,8 @@ public class RetrieveActivity extends AppCompatActivity {
                 String phone = et_phone.getText().toString().trim();
                 // 账号存在，则发送验证码
                 if(!isSending){
-                    if(server_exist_account(phone)){
-                        check_code = server_send_code(phone);
+                    if(LoginServer.exist_account(phone)){
+                        check_code = LoginServer.send_auth_code(phone);
                         startTime = System.currentTimeMillis();
                         isSending = true;
                     }
@@ -113,11 +113,14 @@ public class RetrieveActivity extends AppCompatActivity {
         }
     };
 
-    private String server_send_code(String phone){
-        return "123456";
+    @Override  //设置状态栏透明属性
+    protected void onStart() {
+        StatusBarUtil.transparencyBar(this);
+        StatusBarUtil.BlackFontStatusBar(this.getWindow());
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        super.onStart();
+        Log.e(TAG, getClass().getSimpleName()+": onStart ");
     }
 
-    private Boolean server_exist_account(String phone){
-        return true;
-    }
 }

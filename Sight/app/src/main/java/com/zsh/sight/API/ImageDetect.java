@@ -1,0 +1,38 @@
+package com.zsh.sight.API;
+
+import com.zsh.sight.Utils.Base64Util;
+import com.zsh.sight.Utils.FileUtil;
+import com.zsh.sight.Utils.HttpUtil;
+
+import java.net.URLEncoder;
+
+public interface ImageDetect {
+
+
+    public static String advancedGeneral(String imgParam, boolean isUrl) {
+        // 请求url
+        String url = "https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general";
+        try {
+            String param;
+            if(isUrl){
+                param = "url=" + imgParam;
+            }
+            else{
+                // 本地文件路径
+                byte[] imgData = FileUtil.readFileByBytes(imgParam);
+                String imgStr = Base64Util.encode(imgData);
+                imgParam = URLEncoder.encode(imgStr, "UTF-8");
+                param = "image=" + imgParam;
+            }
+            // 注意这里仅为了简化编码每一次请求都去获取access_token，线上环境access_token有过期时间， 客户端可自行缓存，过期后重新获取。
+            String accessToken = "24.20774d55e1252a013916ecee61309dbe.2592000.1638761602.282335-25117457";
+
+            String result = HttpUtil.post(url, accessToken, param);
+            System.out.println(result);
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+}

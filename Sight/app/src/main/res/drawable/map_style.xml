@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id ="@+id/have">
+    <!-- 设置透明背景色 -->
+    <solid android:color="@color/colorAccent" />
+
+    <!-- 设置一个黑色边框 -->
+    <stroke
+        android:width="1dp"
+        android:color="#4f00ced1" />
+    <!-- 设置四个圆角的半径 -->
+    <corners
+        android:bottomLeftRadius="100px"
+        android:bottomRightRadius="100px"
+        android:topLeftRadius="100px"
+        android:topRightRadius="100px" />
+    <!-- 设置一下边距,让空间大一点 -->
+    <padding
+        android:bottom="10dp"
+        android:left="15dp"
+        android:right="15dp"
+        android:top="10dp" />
+</shape>

@@ -1,5 +1,6 @@
 package com.zsh.sight.detect;
 
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.RectF;
 
@@ -9,6 +10,7 @@ public class Box {
     public float x0,y0,x1,y1;
     private int label;
     private float score;
+    private String label_name;
 
     private static String[] labels={"人", "自行车", "汽车", "摩托车", "飞机", "公共汽车", "火车",
             "卡车", "小船", "红绿灯", "消防栓", "停车牌", "停车收费表", "长椅", "鸟", "猫", "狗",
@@ -26,6 +28,7 @@ public class Box {
         this.x1 = x1;
         this.y1 = y1;
         this.label = label;
+        this.label_name = labels[label];
         this.score = score;
     }
 
@@ -34,7 +37,11 @@ public class Box {
     }
 
     public String getLabel(){
-        return labels[label];
+        return label_name;
+    }
+
+    public void setLabel(String newLabel){
+        this.label_name = newLabel;
     }
 
     public float getScore(){
@@ -45,4 +52,5 @@ public class Box {
         Random random = new Random(label);
         return Color.argb(255,random.nextInt(256),random.nextInt(256),random.nextInt(256));
     }
+
 }

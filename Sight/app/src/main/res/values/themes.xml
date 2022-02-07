@@ -27,7 +27,6 @@
         <item name="boxStrokeColor">@color/boxStrokeColor</item>
     </style>
 
-
     <style name="TextAppearance.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="android:textColorPrimary">?android:attr/textColorPrimary</item>
     </style>
@@ -38,7 +37,47 @@
 
     <style name="Widget.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/textColorPrimary</item>
-        <item name="backgroundTint">@color/colorAccent</item>
+        <item name="backgroundTint">@color/button_blue</item>
+        <item name="android:stateListAnimator" tools:ignore="NewApi">
+            @animator/next_button_state_list_anim
+        </item>
+    </style>
+
+    <style name="Widget.Button_ask_emergency" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="backgroundTint">@color/red</item>
+        <item name="android:stateListAnimator" tools:ignore="NewApi">
+            @animator/next_button_state_list_anim
+        </item>
+    </style>
+
+    <style name="Widget.Button_ask_guardian" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="backgroundTint">@color/orange</item>
+        <item name="android:stateListAnimator" tools:ignore="NewApi">
+            @animator/next_button_state_list_anim
+        </item>
+    </style>
+
+    <style name="Widget.Button_ask_volunteer" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="backgroundTint">@color/green</item>
+        <item name="android:stateListAnimator" tools:ignore="NewApi">
+            @animator/next_button_state_list_anim
+        </item>
+    </style>
+
+    <style name="Widget.Button_ask_join" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="backgroundTint">@color/cyan</item>
+        <item name="android:stateListAnimator" tools:ignore="NewApi">
+            @animator/next_button_state_list_anim
+        </item>
+    </style>
+
+    <style name="Widget.Button_ignore" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="backgroundTint">@color/gray</item>
         <item name="android:stateListAnimator" tools:ignore="NewApi">
             @animator/next_button_state_list_anim
         </item>
@@ -65,4 +104,30 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
     </style>
+
+    <!--对话框的样式-->
+    <style name="NormalDialogStyle">
+        <!--对话框背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!--背景透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 是否有覆盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--进出的显示动画 -->
+        <item name="android:windowAnimationStyle">@style/normalDialogAnim</item>
+        <!--背景变暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!--对话框动画-->
+    <style name="normalDialogAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/normal_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/normal_dialog_exit</item>
+    </style>
+
 </resources>

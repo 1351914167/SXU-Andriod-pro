@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
     tools:context=".login.RegisterActivity">
 
     <LinearLayout
@@ -17,7 +18,7 @@
             android:id="@+id/back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="40dp"
             android:text="返回"
             android:textSize="20dp" />
 
@@ -25,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:layout_gravity="center"
-            android:src="@drawable/title"
+            android:src="@drawable/title_font"
             android:layout_marginTop="50dp"/>
 
         <TextView
@@ -36,17 +37,26 @@
             android:text="找回密码"
             android:textColor="#000000"
             android:textSize="28dp" />
-
-        <EditText
-            android:id="@+id/account"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/retrieve_input"
+            style="@style/Widget.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/edit_style"
-            android:digits="0123456789"
-            android:hint="账号/手机号"/>
+            android:hint="账号/手机号"
+            app:errorEnabled="true"
+            android:layout_marginHorizontal="20dp"
+            app:endIconMode="clear_text"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/retrieve_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:contentDescription="请输入昵称"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,37 +66,38 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             >
-
-            <EditText
-                android:id="@+id/check_code"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/test_input"
+                style="@style/Widget.TextInputLayout"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="0.7"
-                android:background="@drawable/edit_style"
-                android:digits="0123456789"
-                android:layout_marginRight="20dp"
-                android:hint="验证码"/>
+                android:layout_height="wrap_content"
+                android:hint="验证码"
+                app:endIconMode="clear_text"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/test_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:contentDescription="请输入昵称"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/send"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
+                android:layout_marginLeft="20dp"
                 android:text="发送"
                 android:textSize="18dp"
                 android:background="@drawable/button_style" />
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/warn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:textColor="#ff0000"
-            android:textSize="15dp" />
 
         <Button
             android:id="@+id/next_step"

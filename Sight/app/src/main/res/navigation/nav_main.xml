@@ -19,7 +19,29 @@
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_homeFragment_to_twoFragment"
-            app:destination="@id/unknown_page"
+            app:destination="@id/community_page"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/help_page"
+        android:name="com.zsh.sight.feature.HelpFragment"
+        android:label="@string/help_label"
+        tools:layout="@layout/fragment_help">
+        <action
+            android:id="@+id/action_homeFragment_to_oneFragment"
+            app:destination="@id/person_page"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_homeFragment_to_twoFragment"
+            app:destination="@id/community_page"
             app:enterAnim="@anim/slide_from_left"
             app:exitAnim="@anim/slide_to_right"
             app:popEnterAnim="@anim/slide_from_left"
@@ -42,9 +64,9 @@
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/unknown_page"
+        android:id="@+id/community_page"
         android:name="com.zsh.sight.feature.CommunityFragment"
-        android:label="@string/unknown_label"
+        android:label="@string/community_label"
         tools:layout="@layout/fragment_community">
         <action
             android:id="@+id/action_homeFragment_to_oneFragment"

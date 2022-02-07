@@ -11,7 +11,7 @@
 
     <color name="colorPrimary">#00B0FF</color>
     <color name="colorPrimaryDark">#00B0FF</color>
-    <color name="colorAccent">#40C4FF</color>
+    <color name="colorAccent">#000000</color>
     <color name="background">#FFFFFFFF</color>
     <color name="toolbarIconColor">@color/textColorPrimary</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
@@ -19,4 +19,18 @@
     <color name="productGridBackgroundColor">#FFFFFF</color>
     <color name="boxStrokeColor">#40C4FF</color>
     <color name="bottom_selected">@color/black</color>
+
+    <!--    00B0FF-->
+        <color name="toolbar_color">#00B0FF</color>
+    <color name="blue">#0080FF</color>
+    <color name="gray">#ebebef</color>
+    <color name="button_blue">#40C4FF</color>
+
+    <color name="red">#FF0000</color>
+    <color name="orange">#FFA500</color>
+    <color name="green">#00FA9A</color>
+    <color name="cyan">#00FFFF</color>
+
+    <color name="aqua">#E1FFFF</color>
+
 </resources>

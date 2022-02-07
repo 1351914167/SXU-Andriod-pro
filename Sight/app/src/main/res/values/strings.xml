@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sight</string>
+    <string name="app_name">听听视界</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -11,13 +11,21 @@
     <string name="setting_title">setting</string>
     <string name="hint_username">请输入用户名</string>
     <string name="hint_password">请输入密码</string>
-    <string name="button_next">登录</string>
+    <string name="button_next">登 录</string>
     <string name="button_cancel">取消</string>
     <string name="account_error">请输入正确的手机号</string>
     <string name="password_error">密码须长于8个字符</string>
-    <string name="map_label">买瓜</string>
-    <string name="person_label">华强</string>
-    <string name="unknown_label">撒日朗</string>
-    <string name="community">社区</string>
-    <string name="person">个人</string>
+    <string name="map_label">地图</string>
+    <string name="detect_label">检测</string>
+    <string name="person_label">设置</string>
+    <string name="help_label">求助</string>
+    <string name="community_label">社区</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="location_exception">位置出现异常</string>
+    <string name="start_location">听听视界正在获取您的位置</string>
+    <string name="url">http://121.5.169.147:8000/</string>
+    <string name="test">文字信息</string>
+    <string name="recruit">招聘信息</string>
+    <string name="resume">简历填写</string>
 </resources>

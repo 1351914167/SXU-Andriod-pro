@@ -31,64 +31,53 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp"
-            android:paddingLeft="10px">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="新密码    "
-                android:textColor="#000000"
-                android:textSize="21dp" />
+            android:layout_height="200dp"
+            android:layout_margin="15dp"
+            android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/account"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/new_password_input"
+                style="@style/Widget.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="0123456789"
-                android:hint="  请输入新密码"
-                android:inputType="text"
-                android:textSize="22dp" />
+                android:hint="输入新密码"
+                android:layout_marginHorizontal="20dp"
+                app:endIconMode="clear_text"
+                >
 
-        </LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/new_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:contentDescription="输入新密码"
+                    android:maxLines="1" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dp"
-            android:paddingLeft="10px">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="再次输入"
-                android:textColor="#000000"
-                android:textSize="21dp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/check_code"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/confirm_input"
+                style="@style/Widget.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="0123456789"
-                android:hint="  再次输入密码"
-                android:textSize="22dp" />
+                android:layout_marginHorizontal="20dp"
+                android:hint="确认新密码"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/confirm_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="确认新密码"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/warn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textColor="#ff0000"
-            android:textSize="18dp" />
 
         <Button
             android:id="@+id/next_step"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:text="完  成"

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/setting_nickname"
+        android:icon="@drawable/ic_account"
+        android:title="修改昵称"/>
+    <item
+        android:id="@+id/setting_code"
+        android:icon="@drawable/ic_outline_lock_24"
+        android:title="修改密码"/>
+    <item
+        android:id="@+id/setting_score"
+        android:icon="@drawable/ic_outline_thumb_up_24"
+        android:title="我的分数"/>
+    <item
+        android:id="@+id/setting_face"
+        android:icon="@drawable/ic_baseline_face_24"
+        android:title="人脸信息"/>
+</menu>

@@ -2,8 +2,8 @@
 buildscript {
     repositories {
         google()
-        jcenter()
         mavenCentral()
+        maven { url "https://www.jitpack.io" }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.2"
@@ -14,4 +14,9 @@ buildscript {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    liteavSdk="com.tencent.liteav:LiteAVSDK_TRTC:9.2.10641"
+    imSdk = "com.tencent.imsdk:imsdk:5.1.66"
 }

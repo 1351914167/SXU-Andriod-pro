@@ -2,7 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:contentDescription="欢迎使用听听视界"
+    android:background="@drawable/bg_init">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:contentDescription="听见世界，看清美好"
+            android:src="@drawable/w1"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:contentDescription="听见世界，看清美好"
+            android:src="@drawable/w2"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,11 +37,13 @@
 
         <ImageView
             android:id="@+id/food_title"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="300dp"
-            android:src="@drawable/title" />
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:contentDescription="欢迎使用听听视界"
+            android:src="@drawable/init_icon"/>
 
     </LinearLayout>
+
 </LinearLayout>
